@@ -6,13 +6,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@solana-mobile/wallet-adapter-mobile": "^0.0.1-alpha.5",
+    "@solana-mobile/wallet-adapter-mobile": "2.1.3",
     "@solana/wallet-adapter-base": "^0.9.9",
     "@solana/wallet-adapter-react": "^0.15.8",
     "@solana/wallet-adapter-react-ui": "^0.9.10",
-    "@solana/wallet-adapter-wallets": "^0.16.8",
+    "@solana/wallet-adapter-wallets": "0.19.32",
     "@solana/web3.js": "^1.48.0",
-    "bs58": "^5.0.0",
+    "bs58": "6.0.0",
     "next": "^14.2.5",
     "next-auth": "^4.24.7",
     "react": "^18.2.0",
@@ -20,8 +20,8 @@
     "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
-    "@types/node": "^17",
+    "@types/node": "22.1.0",
     "@types/react": "^18.0.15",
-    "typescript": "^4"
+    "typescript": "5.5.4"
   }
 }

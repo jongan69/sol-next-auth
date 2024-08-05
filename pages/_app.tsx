@@ -1,5 +1,5 @@
 import { SessionProvider } from "next-auth/react";
-import React, { FC, useMemo } from "react";
+import React, { useMemo } from "react";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -11,14 +11,10 @@ import {
   PhantomWalletAdapter,
   SlopeWalletAdapter,
   SolflareWalletAdapter,
-  SolletExtensionWalletAdapter,
-  SolletWalletAdapter,
   TorusWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import {
   WalletModalProvider,
-  WalletDisconnectButton,
-  WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 import {
@@ -35,7 +31,7 @@ import "./styles.css";
 // `useSession()` anywhere in your application to access the `session` object.
 export default function App({ Component, pageProps }: AppProps) {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Devnet;
+  const network = WalletAdapterNetwork.Mainnet;
 
   // You can also provide a custom RPC endpoint.
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
@@ -48,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
       new SolanaMobileWalletAdapter({
         appIdentity: { name: "Solstorio" },
         authorizationResultCache: createDefaultAuthorizationResultCache(),
-        cluster: WalletAdapterNetwork.Mainnet
+        cluster: network
       }),
       new CoinbaseWalletAdapter(),
       new PhantomWalletAdapter(),
